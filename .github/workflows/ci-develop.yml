@@ -1,0 +1,42 @@
+name: CI-Develop
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          node_modules
+          .cache
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run Unit Tests
+      run: npm test -- --testPathPattern=__tests__/unit --coverage --watchAll=false
+
+    - name: Run Integration Tests
+      run: npm test -- --testPathPattern=__tests__/integration --watchAll=false
+
+    - name: Run Component Tests
+      run: npm test -- --testPathPattern=__tests__/component --watchAll=false
+
+    - name: Lint and Static Analysis
+      run: npm run lint
