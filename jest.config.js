@@ -9,5 +9,6 @@ module.exports = {
       'src/**/*.{js,jsx}',
       '!src/index.js',
       '!src/serviceWorker.js'
-    ]
+    ],
+    extensionsToTreatAsEsm: ['.jsx'],
   };
