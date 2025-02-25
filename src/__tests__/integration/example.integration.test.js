@@ -1,4 +1,5 @@
 // Simple integration test example
+import { test, expect, describe } from '@jest/globals';
 describe('API Integration Test', () => {
     test('async test example', async () => {
       const mockFetch = jest.fn(() => 
