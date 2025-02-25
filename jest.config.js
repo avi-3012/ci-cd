@@ -7,11 +7,11 @@ module.exports = {
     ],
     collectCoverageFrom: [
       'src/**/*.{js,jsx}',
-      '!src/index.js',
+      '!src/index.jsx',
       '!src/serviceWorker.js'
     ],
     extensionsToTreatAsEsm: ['.jsx'],
     transform: {
-      '^.+\\.(js|jsx)$': 'babel-jest',
+      "^.+\\.[t|j]sx?$": "babel-jest"
     }
   };
