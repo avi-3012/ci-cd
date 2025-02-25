@@ -10,7 +10,7 @@ module.exports = {
       '!src/index.jsx',
       '!src/serviceWorker.js'
     ],
-    extensionsToTreatAsEsm: ['.jsx'],
+    moduleFileExtensions: ["js", "jsx"],
     transform: {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
