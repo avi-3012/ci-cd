@@ -6,21 +6,21 @@
     "@testing-library/dom": "^10.4.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "homepage": "https://avi-3012.github.io/ci-cd/",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:unit": "react-scripts test --testPathPattern=__tests__/unit",
-    "test:integration": "react-scripts test --testPathPattern=__tests__/integration",
-    "test:component": "react-scripts test --testPathPattern=__tests__/component",
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=__tests__/unit",
+    "test:integration": "jest --testPathPattern=__tests__/integration",
+    "test:component": "jest --testPathPattern=__tests__/component",
     "test:all": "npm run test:unit && npm run test:integration && npm run test:component",
-    "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint ."
   },
   "eslintConfig": {
@@ -45,7 +45,9 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "jest": "^27.5.1",
-    "jest-environment-jsdom": "^29.7.0"
+    "jest-environment-jsdom": "^29.7.0",
+    "vite": "^6.2.0"
   }
 }
