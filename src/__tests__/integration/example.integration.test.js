@@ -1,5 +1,5 @@
 // Simple integration test example
-import { test, expect, describe } from '@jest/globals';
+import { test, expect, describe, jest } from '@jest/globals';
 describe('API Integration Test', () => {
     test('async test example', async () => {
       const mockFetch = jest.fn(() => 
@@ -7,6 +7,7 @@ describe('API Integration Test', () => {
           json: () => Promise.resolve({ success: true }),
         })
       );
+      // eslint-disable-next-line no-undef
       global.fetch = mockFetch;
   
       const response = await fetch('https://api.example.com');
