@@ -1,3 +1,5 @@
+import React from 'react';
+
 const ExampleComponent = () => (
     <div>
       <h1>Test Component</h1>
