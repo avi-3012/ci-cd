@@ -11,4 +11,7 @@ module.exports = {
       '!src/serviceWorker.js'
     ],
     extensionsToTreatAsEsm: ['.jsx'],
+    transform: {
+      '^.+\\.(js|jsx)$': 'babel-jest',
+    }
   };
