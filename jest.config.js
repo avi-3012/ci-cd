@@ -3,8 +3,13 @@ module.exports = {
     setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
     testPathIgnorePatterns: [
       '/node_modules/',
-      '/build/'
+      '/build/',
+      '__mocks__'
     ],
+    moduleNameMapper: {
+      '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
+      "\\.(css|less|scss|sass)$": "<rootDir>/src/__mocks__/styleMock.js"
+    },
     collectCoverageFrom: [
       'src/**/*.{js,jsx}',
       '!src/index.jsx',

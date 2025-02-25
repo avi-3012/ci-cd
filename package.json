@@ -21,7 +21,7 @@
     "test:all": "npm run test:unit && npm run test:integration && npm run test:component",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "lint": "eslint . --ignore-pattern '.config/*'"
+    "lint": "eslint . "
   },
   "eslintConfig": {
     "extends": [
