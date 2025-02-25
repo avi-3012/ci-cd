@@ -1,5 +1,7 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ExampleComponent from './components/ExampleComponent';
 
 function App() {
   return (
@@ -15,8 +17,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React/ Test CI/CD
         </a>
+        <ExampleComponent/>
       </header>
     </div>
   );
