@@ -6,6 +6,18 @@ export default defineConfig(() => {
     build: {
       outDir: 'build',
     },
-    plugins: [react()],
+    plugins: [react({
+        presets: [
+          '@babel/preset-react',
+          [ 
+            '@babel/preset-env',
+            {
+              targets: {
+                node: 'current',
+              },
+            },
+          ],
+        ],
+      })],
   };
 });
